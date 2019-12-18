@@ -283,6 +283,14 @@ class Conf {
 		this.store = store;
 	}
 
+	get INTERNAL_KEY() {
+		return INTERNAL_KEY;
+	}
+
+	get MIGRATION_KEY() {
+		return MIGRATION_KEY;
+	}
+
 	get(key, defaultValue) {
 		if (this._options.accessPropertiesByDotNotation) {
 			return dotProp.get(this.store, key, defaultValue);

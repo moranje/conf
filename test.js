@@ -16,6 +16,14 @@ test.beforeEach(t => {
 	t.context.configWithoutDotNotation = new Conf({cwd: tempy.directory(), accessPropertiesByDotNotation: false});
 });
 
+test('.INTERNAL_KEY', t => {
+	t.is(typeof t.context.config.INTERNAL_KEY, 'string');
+});
+
+test('.MIGRATION_KEY', t => {
+	t.is(typeof t.context.config.MIGRATION_KEY, 'string');
+});
+
 test('.get()', t => {
 	t.is(t.context.config.get('foo'), undefined);
 	t.is(t.context.config.get('foo', '🐴'), '🐴');
